@@ -1,0 +1,6 @@
+Essa aplicação encontra definições para palavras em português em um dicionário e na wikipedia através de suas APIs públicas.
+
+-----------------------------
+
+This application find definitions for portuguese words in a dictionary and wikipedia through it's public APIs.
+The application could be easily changed to find definitions in wikipedia english, only change the endpoint to http://en.wikipedia.org/w/api.php
