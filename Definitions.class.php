@@ -38,7 +38,8 @@
             $data = false;
             $this->wikipedia['action'] = 'query';
             $params['prop'] = 'extracts';
-            $params['exintro'];
+            $params['redirects'] = true;
+            $params['exintro'] = true;
             $params['explaintext'] = 'plain';
             $params['exchars'] = 140;
             if (!empty($params['titles']))
