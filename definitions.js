@@ -89,15 +89,30 @@ var showDictionaryDefinition = function(content)
         ul = document.createElement('ul');
 
     title.className = 'dictionary-word-title';
-    title.appendChild(document.createTextNode(content.superEntry[0].entry.form.orth));
-    results.appendChild(title);
-    
-    for (var i = 0; i < content.superEntry.length; i++)
+    if (content.superEntry)
     {
-        for (var j = 0; j < content.superEntry[i].entry.sense.length; j++)
+        title.appendChild(document.createTextNode(content.superEntry[0].entry.form.orth));
+        results.appendChild(title);
+
+        for (var i = 0; i < content.superEntry.length; i++)
         {
-            var li = document.createElement('li')
-            li.appendChild(document.createTextNode(content.superEntry[i].entry.sense[j].def));
+            for (var j = 0; j < content.superEntry[i].entry.sense.length; j++)
+            {
+                var li = document.createElement('li');
+                li.appendChild(document.createTextNode(content.superEntry[i].entry.sense[j].def));
+                ul.appendChild(li);
+            }
+        }
+    }
+    else
+    {
+        title.appendChild(document.createTextNode(content.entry.form.orth));
+        results.appendChild(title);
+
+        for (var j = 0; j < content.entry.sense.length; j++)
+        {
+            var li = document.createElement('li');
+            li.appendChild(document.createTextNode(content.entry.sense[j].def));
             ul.appendChild(li);
         }
     }
