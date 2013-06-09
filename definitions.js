@@ -10,9 +10,16 @@ var getTerms = function(query, callback)
             {
                 callback(data[1]);
             }
-            else
+            else if (data[1].length == 1)
             {
                 getDefinition(data[1][0], showWikipediaSnnipet);
+            }
+            else
+            {
+                clearChildren(results);
+                var error = document.createElement('p');
+                error.appendChild(document.createTextNode('Nenhum resultado encontrado para a palavra ' + query));
+                results.appendChild(error);
             }
         }
     });
