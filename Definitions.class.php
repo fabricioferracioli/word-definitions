@@ -108,7 +108,7 @@
             {
                 $curl = curl_init($this->dictionary['endpoint'] . $params);
 
-                curl_setopt($curl, CURLOPT_USERAGENT, $this->wikipedia['userAgent']);
+                curl_setopt($curl, CURLOPT_USERAGENT, $this->dictionary['userAgent']);
                 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
                 $data = curl_exec($curl);
